@@ -16,6 +16,7 @@ import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutl
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -55,6 +56,7 @@ const Sidebar = () => {
         },
         "& .pro-inner-item:hover": {
           color: "#868dfb !important",
+          backgroundColor: `${colors.grey[100]} !important`,
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
@@ -80,7 +82,7 @@ const Sidebar = () => {
                 ml="15px"
               >
                 <Typography variant="h3" color={colors.grey[100]}>
-                  ADMINIS
+                  Hit Track
                 </Typography>
                 <IconButton onClick={() => setIsCollapsed(!isCollapsed)}>
                   <MenuOutlinedIcon />
@@ -96,7 +98,7 @@ const Sidebar = () => {
                   alt="profile-user"
                   width="100px"
                   height="100px"
-                  src={`../../assets/user.png`}
+                  src='react-adminpanel\src\assets\profile.png'
                   style={{ cursor: "pointer", borderRadius: "50%" }}
                 />
               </Box>
@@ -107,10 +109,10 @@ const Sidebar = () => {
                   fontWeight="bold"
                   sx={{ m: "10px 0 0 0" }}
                 >
-                  Ed Roh
+                  Storm Tebbutt
                 </Typography>
                 <Typography variant="h5" color={colors.greenAccent[500]}>
-                  VP Fancy Admin
+                  CEO Hit Track
                 </Typography>
               </Box>
             </Box>
@@ -161,6 +163,13 @@ const Sidebar = () => {
             >
               Pages
             </Typography>
+            <Item 
+              title='Leauge Scores'
+              to='/leagues'
+              icon={<EmojiEventsOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />          
             <Item
               title="Profile Form"
               to="/form"
